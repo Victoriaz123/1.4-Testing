@@ -10,9 +10,8 @@ public class ArrayOfCarsTest {
 
         ArrayIndexOutOfBoundsException exception =
                 assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-                    example.accessInvalidIndex();
+                    example.accessInvalidIndex(4);
                 });
-        assertEquals("Index 4 out of bounds for length 4", exception.getMessage());
+        assertEquals("Index out of limits", exception.getMessage());
     }
-
 }

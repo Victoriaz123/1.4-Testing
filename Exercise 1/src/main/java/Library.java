@@ -23,7 +23,7 @@ import java.util.Collections;
                 if (position >= 0 && position < books.size()) {
                     return books.get(position);
                 } else {
-                    return null;
+                    return "Error! Cannot find the book";
                 }
             }
 
@@ -34,8 +34,13 @@ import java.util.Collections;
                 }
             }
 
-            public void deleteBook(String title) {
-                books.remove(title);
+            public String deleteBook(String title) {
+                for (int i = 0; i < books.size(); i++) {
+                    if (books.get(i).equalsIgnoreCase(title)) {
+                        books.remove(i);
+                        return "The book '" + title + "' was deleted.";
+                    }
+                }
+                return "Could not find the book '" + title + "'.";
             }
         }
-

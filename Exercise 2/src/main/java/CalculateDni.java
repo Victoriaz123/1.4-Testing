@@ -6,9 +6,8 @@ public class CalculateDni {
 
     public char calculateLetter(int dni) {
         if (dni < 0 || dni > 99999999) {
-            throw new IllegalArgumentException("El número de DNI ha de ser entre 0 i 99999999.");
+            throw new IllegalArgumentException("DNI number has to be between 0 and 99999999.");
         }
         return LETTERS_DNI[dni % 23];
     }
 }
-

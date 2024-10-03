@@ -1,8 +1,12 @@
 public class ArrayOfCars {
 
-    public void accessInvalidIndex() {
-        String[] cars = {"Mercedes", "Toyota", "BMW", "Ford"};
+    private String[] cars = {"Mercedes", "Toyota", "BMW", "Ford"};
 
-        int invalidAccess = Integer.parseInt(cars[4]);
+    public String accessInvalidIndex(int index) throws ArrayIndexOutOfBoundsException {
+
+        if (index < 0 || index >= cars.length) {
+            throw new ArrayIndexOutOfBoundsException("Index out of limits");
+        }
+        return cars[index];
     }
 }
